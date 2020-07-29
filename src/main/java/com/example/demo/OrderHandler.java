@@ -68,5 +68,11 @@ public class OrderHandler {
     public Order findAnOrder(@PathVariable("oid") long oid){
         return orderRepository.findById(oid).get();
     }
+    
+    @DeleteMapping("/deleteByOrderID/{orderid}")
+    public void deleteByOrderID(@PathVariable("orderid") long orderid){
+        orderRepository.deleteByOrderID(orderid);
+    }
+
 
 }
